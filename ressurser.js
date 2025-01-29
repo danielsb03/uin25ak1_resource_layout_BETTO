@@ -98,16 +98,30 @@ const resources = [
 ]
 
 let innhold = ""
-resources.map((resource) => innhold += 
-            `<h1>${resource.category}</h1>
-            <p>${resource.text}</p>
-            <ul id="linker">
-                <li><a href="">W3Schools</a></li>
-                <li><a href="#">HTML Living standard</a></li>
-                <li><a href="#">HTMLcom Tutorials</a></li>
-            </ul>`)
 
 
 
 document.getElementById("info").innerHTML = innhold
 
+let titles = ""
+resources.map((headline)=> titles +=
+`
+            <li> <button id="knapper"> ${headline.category}</button</li>`)
+
+document.getElementById("title").innerHTML = titles
+
+const buttonWhite = document.getElementById("knapper")
+
+resources.filter(resource => resource.category)
+let test = resources.filter(resource => resource.category === 'HTML').map(resource => document.getElementById("info").innerHTML += `<h1>${resource.category}</h1>
+                <p>${resource.text}</p>
+                <ul id="linker">
+                    <li><a href="">W3Schools</a></li>
+                    <li><a href="#">HTML Living standard</a></li>
+                    <li><a href="#">HTMLcom Tutorials</a></li>
+                </ul>`)
+
+
+buttonWhite.addEventListener("click", function(){
+    
+})
